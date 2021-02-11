@@ -13,10 +13,11 @@ function createUserAction()
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['MAX_FILE_SIZE'])) {
         if ((string)strlen($_POST['pseudo']) > 0 && (string)strlen($_POST['password']) > 0 && (string)strlen($_POST['email']) > 0) {
             $img = $_FILES['userfile']['tmp_name'];
-            $user = new User($_POST['pseudo'], $_POST['email'], $_POST['password'], file_get_contents($img));
+            $user = new User($_POST['pseudo'], $_POST['email'], $_POST['password'], file_get_contents($img), date('H:i:s'));
             $userManager = new UserManager();
             $userManager->insertUser($user);
             var_dump($_FILES['userfile']);
+            $_SESSION['email'] = $user->getEmail();
             header("Location: connexion");
         }
     }

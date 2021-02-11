@@ -8,13 +8,15 @@ class User
     private $email;
     private $password;
     private $profile_img;
+    private $time;
 
-    public function __construct($pseudo, $email, $password, $profile_img)
+    public function __construct($pseudo, $email, $password, $profile_img, $time)
     {
         $this->pseudo = $pseudo;
         $this->email = $email;
         $this->password = $password;
         $this->profile_img = $profile_img;
+        $this->time = $time;
     }
 
     public function getPseudo()
@@ -35,6 +37,10 @@ class User
     public function getProfile_img()
     {
         return $this->profile_img;
+    }
+
+    public function getTime() {
+        return $this->time;
     }
 
 }

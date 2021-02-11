@@ -10,9 +10,10 @@ function LoginAction() {
             $user = new UserLogin($_POST['email'], $_POST['password']);
             $usermanager = new UserManager();
             $usermanager->LoginUser($user);
+            $usermanager->UpdateTime($user);
             if ($usermanager->LoginUser($user) === true) {
                 $_SESSION['email'] = $user->getEmail();
-                echo "Vous venez de vous login<br>";
+                header("Location: connexion");
             }
             else if ($usermanager->LoginUser($user) === false){
                 echo "Vous n'avez pas entrer les bonnes informations";

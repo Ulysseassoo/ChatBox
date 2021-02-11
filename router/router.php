@@ -21,25 +21,11 @@ switch ($explodeurl[1]) {
         break;
     case 'connexion':
         require(__DIR__.'/../controller/getUsersAction.php');
+        require(__DIR__.'/../controller/Time_conversion.php');
         getUsersAction();
         break;
-    // case 'create-User':
-    //     require(__DIR__.'/../controller/AddUserAction.php');
-    //     createUserAction(); 
-    //     break;
-    // case 'Login':
-    //     require(__DIR__.'/../controller/LoginUserAction.php');
-    //     LoginUserAction();
-    //     break;
-    // case 'Disconnection':
-    //     require(__DIR__.'/../controller/Disconnection.php');
-    //     DisconnectUserAction();
-    //     break;
-
-    // case 'idea':
-    //     if (isset($explodeurl[2])) {
-    //         require_once(__DIR__.'/../controller/getIdeaAction.php');
-    //         getIdea($explodeurl[2]);
-    //     }
-    //     break;
+    case 'logout':
+        require(__DIR__.'/../controller/Logout.php');
+        DisconnectUserAction();
+        break;
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
     <fieldset>
-        <form action="connexion" method="POST">
+        <form action="#" method="POST">
             <h1>Realtime Chat App</h1>
             <label for="email">Email</label>
             <input type="email" name="email" required>
