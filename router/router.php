@@ -2,12 +2,13 @@
 session_start();
 
 
+
+
 $url = $_SERVER['REQUEST_URI'];
 
 global $explodeurl;
 
 $explodeurl = explode('/', $url);
-var_dump($explodeurl);
 // remplacer les arrays avec user id en pseudo;
 
 switch ($explodeurl[1]) {
@@ -27,5 +28,15 @@ switch ($explodeurl[1]) {
     case 'logout':
         require(__DIR__.'/../controller/Logout.php');
         DisconnectUserAction();
+        break;
+    case 'user':
+        if (isset($explodeurl[2])) {
+            require_once(__DIR__.'/../controller/GetUserChat.php');
+            require(__DIR__.'/../controller/Time_conversion.php');
+            UserChatbox($explodeurl[2]);
+            $_SESSION['receiver_id'] = $explodeurl[2];
+            require(__DIR__.'/../controller/createUserRelation.php');
+            createRelation();
+        }
         break;
 }

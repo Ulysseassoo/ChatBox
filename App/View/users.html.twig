@@ -1,0 +1,51 @@
+
+{% block css %}
+    <link rel="stylesheet" href="styling/users.css">
+{% endblock %}
+{% block js %}
+    <script src="/time.js"></script>
+{% endblock %}
+{% block title %}
+    <title>Users</title>
+{% endblock %}
+{% block body %}
+    <div class="container">
+    <!-- For the online session you need to check for the time -->
+    <!-- We show in the active user, the user connected from the session -->
+        <div class="users">
+            <div class="active-user">
+                <div class="left">
+                    <div class="pic">
+                        <img src=data:image/jpeg;base64,{{img}} alt="Profile_pic">
+                    </div>
+                    <div class="infos">
+                        <p>{{user.pseudo}}</p>
+                        <span id='active_user'>{{time}}</span>
+                    </div>
+                </div>
+                <a class="logout" href="/logout">Logout</a>
+            </div>
+            <span></span>
+            <div class="other-users">
+                {% if users %}
+                    <h2>Select an User to Chat</h2>
+                    {% for user in users %}
+                        <div class="bottom_users">
+                            <div class="pic">
+                                <a href="/user/{{user.id}}"><img src=data:image/jpeg;base64,{{user.profile_img}} alt="Profile_pic"></a>
+                            </div>
+                            <div class="infos">
+                                <p>{{user.pseudo}}</p>
+                                <span>{{user.recent_connexion}}</span>
+                            </div>
+                        </div> 
+                    {% endfor %}
+                {% else %}
+                    <div>
+                        <p>There's nobody to chat right now !</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

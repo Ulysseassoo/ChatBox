@@ -1,0 +1,161 @@
+:root {
+    --background-color: #331a4d;
+    --underlines-color: #202020;
+    --font-color: white;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--background-color);
+}
+
+.container {
+    display: flex;
+    width: 500px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 6px black,
+    -1px -1px 6px black;
+    border-radius: 10px;
+    background: var(--background-color);
+    transition: 2s;
+    flex-direction: column;
+}
+
+.container:hover {
+    box-shadow: 1px 1px 6px white,
+    -1px -1px 6px white;
+}
+
+.users {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    color: var(--font-color);
+    flex-wrap: wrap;
+}
+
+.green {
+    color: rgb(3, 190, 3);
+    border: var(--underlines-color) 2px solid;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+.red {
+    color: rgb(206, 11, 11);
+    border: var(--underlines-color) 2px solid;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+.active-user {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.pic > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.infos {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infos > p {
+    font-size: 18px;
+}
+
+.infos > span {
+    font-size: 12px;
+}
+
+.logout {
+    background: var(--underlines-color);
+    color: var(--font-color);
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 1s;
+}
+
+.logout:hover {
+    background: white;
+    color: var(--underlines-color);
+}
+
+.users > span {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 1px;
+    background: var(--underlines-color);
+}
+
+/* Other users */
+
+.other-users {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pic > a img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.bottom_users {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+
+}
+
+.bottom_users:hover > .pic > a > img{
+    --underlines-color: #9128bb;
+    cursor: pointer;
+    box-shadow: 1px 1px 6px var(--underlines-color),
+    -1px -1px 6px var(--underlines-color);
+}

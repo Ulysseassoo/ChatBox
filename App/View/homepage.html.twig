@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}<link rel="stylesheet" href="styling/homepage.css">{% endblock %}
+    {% block js %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"> 
+    {% block fontawesome %}<script src="https://kit.fontawesome.com/3dbe5573ce.js" crossorigin="anonymous"></script>{% endblock %}
+    {% block title %}<title>Inscription</title>{% endblock %}
+</head>
+<body>
+    {% block body %}
+        <div class="container">
+            <!-- We add an enctype in order to upload images we use multipart/form-data -->
+            <form enctype="multipart/form-data" action="#" method="POST" class="myForm">
+                <div class="top">
+                <h1>Realtime Chat App</h1>
+                <span></span>
+                </div>
+                <div class="error_message">
+                    
+                </div>
+                <div class="middle">
+                    <div class="middle_box">
+                        <label for="pseudo">Pseudo</label>
+                        <input type="text" name="pseudo" id="pseudo" required>
+                    </div>
+                    <div class="middle_box">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                </div>
+                <div class="middle2">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="bottom">
+                    <label for="userfile">Select an image</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="300000">
+                    <input type="file" name="userfile" id="userfile">
+                </div>
+                    <input type="submit" name="submit" value="Start to chat">
+                    <a class="login" href="login">You already have an account ? <span> Login Here</span></a>
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

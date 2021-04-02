@@ -1,0 +1,41 @@
+{% block js %}<script src="/modules/script.js"></script>{% endblock %}
+{% block css %}<link rel="stylesheet" href="/styling/chatbox.css">{% endblock %}
+{% block fontawesome %}<script src="https://kit.fontawesome.com/3dbe5573ce.js" crossorigin="anonymous"></script>{% endblock %}
+{% block title %}<title>Chatbox</title>{% endblock %}
+{% block body %}
+<!-- For the online session you need to check for the time -->
+<!-- We show in the active user, the user connected from the session -->
+    <div class="container">
+        <div class="active-user">
+            <div class="left">
+                <div class="pic">
+                    <a href="/connexion"><i class="fas fa-arrow-left"></i></a>
+                    <img src=data:image/jpeg;base64,{{user_chat.profile_img}} alt="Profile_pic">
+                </div>
+                <div class="infos">
+                    <p>{{user_chat.pseudo}}</p>
+                    <span>{{user_chat.recent_connexion}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="Chatbox_bg">
+        </div>
+        <div class="send_message">
+            <form id ="myForm">
+                <input type="text" name="message" id ="message" placeholder="Enter your message here...">
+                <button type="submit" class="send_data"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+    <!-- If The person sends it then we only show the message, and in the receiver chatbox we show the image
+    I need to take back the values sender id and receiver id of the message and database 
+    And return that if it's the sender then just the message and if it's only the receiver it's picture -->
+{% endblock %}
+<style>
+    .red {
+        color: red;
+    }
+    .blue {
+        color: blue;
+    }
+</style>
